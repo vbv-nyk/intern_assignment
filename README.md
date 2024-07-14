@@ -24,7 +24,7 @@ This program converts `input.ass` files into `output.ass` files for karaoke-styl
 
 ### Notes
 - The `run.sh` script copies `input_subtitles.ass` to `src/input.ass`, runs the conversion script, and then copies the resulting `output.ass` back to `output_subtitles.ass`.
-- Make sure your `input.ass` file is correctly named and placed in the appropriate directory before running the script.
+- Make sure your `input_subtitle.ass` file is correctly named and placed in the appropriate directory (project root directory) before running the script.
 ### Overview
 
 The program performs the following steps:
