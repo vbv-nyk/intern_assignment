@@ -40,7 +40,7 @@ for i, dialogue in enumerate(dialogues):
     previous_dialogue = dialogue[0:9]
     previous_dialogue[3] = 'P'
     previous_dialogue = ','.join(previous_dialogue)
-    previous_dialogue += lyrics[lyrics_pointer - 2] if lyrics_pointer > 2 else ',...'
+    previous_dialogue += lyrics[lyrics_pointer - 2] if lyrics_pointer > 1 else ',...'
 
     current_dialogue = dialogue
     current_dialogue[3] = 'Default'
