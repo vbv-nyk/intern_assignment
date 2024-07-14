@@ -70,6 +70,7 @@ def transform_result(dialogues, lyrics):
         dialogue = dialogue.split(',')
         subtitle = remove_templates(''.join(dialogue[9:]))
         
+        # If lyrics pointer is pointing to the same element as the subtitle, move the pointer forward
         if lyrics_pointer < len(lyrics) and subtitle == lyrics[lyrics_pointer]:
             lyrics_pointer += 1
 
@@ -82,7 +83,6 @@ def transform_result(dialogues, lyrics):
         next_dialogue += lyrics[lyrics_pointer] if lyrics_pointer < len(lyrics) else ',...'
 
         result += (f'{previous_dialogue}\n{current_dialogue}\n{next_dialogue}\n\n')
-    
     return result
 
 def create_output(result):
