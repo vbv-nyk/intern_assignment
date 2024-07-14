@@ -3,4 +3,3 @@ import subprocess
 
 times = subprocess.call(["./times.sh", "input.ass"])
 
-print(times)
