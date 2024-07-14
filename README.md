@@ -2,6 +2,29 @@
 
 This program converts `input.ass` files into `output.ass` files for karaoke-styled lyrics. The conversion process includes reading the content of the `input.ass` file, retrieving and processing the dialogues, and writing the transformed content into `output.ass`.
 
+### How to Run the Program
+
+1. Place your `input.ass` file in the directory where you have the script.
+2. Ensure you have the `run.sh` script with the following content:
+    ```bash
+    #!/bin/bash
+    cp input_subtitles.ass src/input.ass
+    cd src && python3 main.py
+    cp output.ass ../output_subtitles.ass
+    ```
+3. Make the `run.sh` script executable:
+    ```bash
+    chmod +x run.sh
+    ```
+4. Run the script:
+    ```bash
+    ./run.sh
+    ```
+5. Your converted `output.ass` file will be saved as `output_subtitles.ass` in the same directory.
+
+### Notes
+- The `run.sh` script copies `input_subtitles.ass` to `src/input.ass`, runs the conversion script, and then copies the resulting `output.ass` back to `output_subtitles.ass`.
+- Make sure your `input.ass` file is correctly named and placed in the appropriate directory before running the script.
 ### Overview
 
 The program performs the following steps:
