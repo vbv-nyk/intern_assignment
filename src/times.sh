@@ -4,7 +4,7 @@
 INPUT=$(cat $1)
 
 # Extract all lines containing "Dialogue"
-DIALOGUES=$(awk -F ',' '/Dialogue/ {print $2, $3, $10}' "$1")
+DIALOGUES=$(awk -F ',' '/Dialogue/ {print}' "$1")
 
 
 echo "$DIALOGUES"
