@@ -17,8 +17,6 @@ output: dialogues array containing the different lines of the karaoke lyrics
 1) Use awk to retrieve the content in the event section
 2) Split the text at new line and store it inside dialogues
 """
-
-
 def init_input():
     try:
         timestamps = subprocess.check_output(
@@ -35,8 +33,6 @@ Algorithm: To clean the input from {\rH} and {\r}
 input: A line from the dialogue
 output: Dialogue without the {\r} and {\rH}
 """
-
-
 def remove_templates(content):
     modified_content = content.replace("{\\rH}", "")
     modified_content = modified_content.replace("{\\r}", "")
@@ -48,8 +44,6 @@ Algorithm to insert the flags F, P and Default into the dialogue during conversi
 input: Array dialogue (split at ',')
 output: String dialogue after inserting the flag and joining
 """
-
-
 def transform_input(dialogue, flag):
     dialogue[3] = flag
     dialogue = ','.join(dialogue)
@@ -61,8 +55,6 @@ Algorithm to retrieve the entire lyrics
 Input: Array of lines of lyrics
 Output: Array of lines of lyrics, where adjacent elements are not the same and are cleaned from the templates
 """
-
-
 def get_lyrics(dialogues):
     lyrics = []
     for i, dialogue in enumerate(dialogues):
@@ -81,8 +73,6 @@ Algorithm to transform the subtitles to karaoke
 Input: The dialogues from the input.ass and lyrics after get_lyrics()
 Output: output.ass containing the desired result in karaoke style
 """
-
-
 def transform_result(dialogues, lyrics):
     lyrics_pointer = 0
     result = ""
@@ -108,6 +98,9 @@ def transform_result(dialogues, lyrics):
     return result
 
 
+"""
+    Writes the result to output.ass file
+"""
 def create_output(result):
     try:
         with open('output.ass', 'w') as f:
