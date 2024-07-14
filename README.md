@@ -4,8 +4,8 @@ This program converts `input.ass` files into `output.ass` files for karaoke-styl
 
 ### How to Run the Program
 
-1. Place your `input.ass` file in the directory where you have the script.
-2. Ensure you have the `run.sh` script with the following content:
+1. Place your input in `input_subtitle.ass` file in the root directory.
+2. Ensure you have the `run.sh` script with the following content (Already inside the root directory):
     ```bash
     #!/bin/bash
     cp input_subtitles.ass src/input.ass
